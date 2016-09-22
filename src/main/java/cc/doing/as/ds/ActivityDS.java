@@ -10,9 +10,9 @@ public class ActivityDS {
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUsername("root");
         dataSource.setPassword("1whzydxfsh");
-        dataSource.setUrl("jdbc:mysql://localhost/test");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/doing?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT");
     }
-    public BasicDataSource getDataSource(){
+    public static BasicDataSource getDataSource(){
         return dataSource;
     }
 

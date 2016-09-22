@@ -1,9 +1,11 @@
 package cc.doing.as.dao;
 
+import java.util.Date;
+
 public class Activity {
     int duration;
     String agentId;
-    String dateTime;
+    Date dateTime;
 
     public int getDuration() {
         return duration;
@@ -21,11 +23,11 @@ public class Activity {
         this.agentId = agentId;
     }
 
-    public String getDateTime() {
+    public Date getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(String dateTime) {
+    public void setDateTime(Date dateTime) {
         this.dateTime = dateTime;
     }
 

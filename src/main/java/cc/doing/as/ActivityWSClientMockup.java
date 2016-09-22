@@ -24,7 +24,7 @@ public class ActivityWSClientMockup implements Runnable{
 				e.printStackTrace();
 			}
 			// send message to websocket
-	        clientEndPoint.sendMessage("chrome.exe@@@www.baidu.com@@@baidu yixia ni jiu zh idao!!!@@@"+System.currentTimeMillis()/1000);
+	        clientEndPoint.sendMessage("fwang-w7@@@@@chrome.exe@@@@@baidu yixia ni jiu zh idao!!!@@@@@www.baidu.com@@@@@45@@@@@"+System.currentTimeMillis());
 		}
 	}
 

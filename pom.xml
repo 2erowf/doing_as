@@ -25,7 +25,4 @@
       <version>1.4</version>
     </dependency>
   </dependencies>
-  <build>
-    <finalName>AnalysisServer</finalName>
-  </build>
 </project>
