@@ -29,7 +29,7 @@ public class ServerUpListner implements ServletContextListener {
     public void contextInitialized(ServletContextEvent arg0)  { 
          // TODO Auto-generated method stub
     	System.out.println("server up...");
-    	new Thread(new ActivityWSClientMockup()).start();
+    	//new Thread(new ActivityWSClientMockup()).start();
     }
 	
 }

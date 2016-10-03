@@ -15,7 +15,7 @@ import java.util.Date;
 public class ActivityWS {
 	@OnOpen
 	public void onOpen(Session session){
-		
+		System.out.println("conn open");
 	}
 	@OnClose
     public void end() {
@@ -23,21 +23,28 @@ public class ActivityWS {
     }
 	@OnMessage
     public void incoming(String message) {
-        //agent_id@@@@@p_name@@@@@window_text@@@@@url@@@@@duration@@@@@datetime(milliseconds since epoch time)
-        String[] parts = message.split("@@@@@");
-        if(parts.length == 6){
-            Activity activity = new Activity();
-            activity.setAgentId(parts[0]);
-            activity.setpName(parts[1]);
-            activity.setWindowText(parts[2]);
-            activity.setUrl(parts[3]);
-            activity.setDuration(Integer.parseInt(parts[4]));
-            activity.setDateTime(new Date(Long.parseLong(parts[5])));
-            //activity constructed
-            ActivityDAO ad = new ActivityDAO();
-            ad.insertActivity(activity);
+        try{
+            System.out.println("incoming message : " + message);
+            //agent_id@@@@@p_name@@@@@window_text@@@@@url@@@@@duration@@@@@datetime(milliseconds since epoch time)
+            String[] parts = message.split("@@@@@");
+            if(parts.length == 6){
+                Activity activity = new Activity();
+                activity.setAgentId(parts[0]);
+                activity.setpName(parts[1]);
+                activity.setWindowText(parts[2]);
+                activity.setUrl(parts[3]);
+                activity.setDuration(Integer.parseInt(parts[4]));
+                activity.setDateTime(new Date(Long.parseLong(parts[5])));
+                //activity constructed
+                ActivityDAO ad = new ActivityDAO();
+                ad.insertActivity(activity);
+            }
+            System.out.println("finish inserting!!!");
+        }catch (Throwable t){
+            t.printStackTrace();
         }
-		System.out.println("incoming message : " + message);
+
+
     }
 
 }

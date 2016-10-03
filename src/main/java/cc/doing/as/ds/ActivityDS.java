@@ -8,9 +8,11 @@ public class ActivityDS {
         //TODO: move these to a resource based approach instead of plain text in code
         dataSource = new BasicDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setMaxActive(5);
+        dataSource.setMaxIdle(5);
         dataSource.setUsername("root");
         dataSource.setPassword("1whzydxfsh");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/doing?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/doing?useUnicode=true&characterEncoding=utf8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT");
     }
     public static BasicDataSource getDataSource(){
         return dataSource;

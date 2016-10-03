@@ -11,7 +11,7 @@ public class ActivityDAO {
     public void insertActivity(Activity activity){
         try(Connection con = ActivityDS.getDataSource().getConnection()){
             if(con != null){
-                try(PreparedStatement insertPS = ActivityDS.getDataSource().getConnection().prepareStatement(
+                try(PreparedStatement insertPS = con.prepareStatement(
                         "INSERT INTO " +
                                 "activities  (agent_id, duration, time_stamp, url, window_title, p_name) " +
                                 "VALUES (?, ?, ?, ?, ?, ?)"
